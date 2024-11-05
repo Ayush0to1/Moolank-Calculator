@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Your Moolank</title>
     <!-- <script src="Ai_js.js"></script> -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aiCss.css">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
     <div class="container">
         <div class="header">
             
-            <img src="star.png" alt="" height="250px" style="display:inline;
+            <img src="star.png" alt="" height="230px" style="display:inline;
             position:relative; top:5px" border-radius:40%;
            >
            
@@ -27,14 +27,14 @@
        
         <div class="form-container">
             <form class="input-group">
-            <label for="birthdate">Enter Your Birth Date In AD</label>
+            <label for="birthdate">Enter Your Birth Date</label>
                 <input type="number" id="birthdate" placeholder="day in AD"> <br>
                 <button class="calculate-button">Calculate My Moolank</button>
             </form>
         </div>
         
         <!-- Result section (initially hidden) -->
-        <div class="result-container">
+        <div class="result-container" style="margin-top:20px; padding-top: 20px;">
             <div class="points"> <b style="font-size:30px;"> Moolank Number</b><br> 
             <span id="moolank" style="font-size:40px;"></span>
             </div> <br>
@@ -80,13 +80,12 @@ console.log(nature);
 console.log(form);
 form.addEventListener('submit', (i)=>{
     i.preventDefault();
-    const val=document.querySelector('#birthdate').value;
+    let val=document.querySelector('#birthdate').value;
     if(val<0 || val>33){
         result.innerHTML="Invalid Input"
     }
 //Val is string.
   console.log(typeof(val));
-
   let a=parseInt(val[0]);
   let b=parseInt(val[1]);
   let sum=0;
@@ -98,10 +97,9 @@ form.addEventListener('submit', (i)=>{
     sum=a;
   }
   // all ok here (interger)
-  
   switch(sum){
-
-
+    
+    
     case 1:
         result.style.display="block";
         hide1.style.display="none";
@@ -115,10 +113,10 @@ form.addEventListener('submit', (i)=>{
         break;
 
     case 2:
-    result.style.display="block";
+       result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
-    moolank.innerContent="2";
+        moolank.innerHTML="2";
         nature.innerHTML="Nature like moon, change career/hobbies,  emotion unstable, you trust people and try to understand them, can't take proper decision,  people want to connect you (opposite), you like peace, healing property";
         luckyColor.innerHTML="white, light green";
         luckyNumber.innerHTML="3,5,7,1";
@@ -212,6 +210,8 @@ form.addEventListener('submit', (i)=>{
     result.style.display="none";
         hide1.style.display="block";
         hide2.style.display="block";
+
+        
   })
     
 
