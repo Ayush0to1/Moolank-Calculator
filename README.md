@@ -1,2 +1,0 @@
-# Moolank-Calculator
-Project first.
