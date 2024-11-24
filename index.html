@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Your Moolank</title>
+    <!-- <script src="Ai_js.js"></script> -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,14 +15,16 @@
     <div class="container">
         <div class="header">
             
-            <img src="star.png" alt="" height="230px" style="display:inline;
+            <img src="star.png" alt="" height="250px" style="display:inline;
             position:relative; top:5px" border-radius:40%;
            >
            
-            <h1>Find Your personality</h1>
+            <h1>Find Your personality</h1> <hr> <br>
            
             <p>According to Vedic astrology, Moolank influences one's innate characteristics, talents, and natural inclinations.
-                </p>
+                </p> <br> <br>
+                <p>Please enter number between (1-32) <br> and don't enter (01) as input </p>
+                
         </div>
        
         <div class="form-container">
@@ -32,8 +35,10 @@
             </form>
         </div>
         
+        
+
         <!-- Result section (initially hidden) -->
-        <div class="result-container" style="margin-top:20px; padding-top: 20px;">
+        <div class="result-container">
             <div class="points"> <b style="font-size:30px;"> Moolank Number</b><br> 
             <span id="moolank" style="font-size:40px;"></span>
             </div> <br>
@@ -74,19 +79,20 @@ const hide1=document.querySelector(".header");
 const hide2=document.querySelector(".form-container");
 const reset=document.querySelector(".reset")
 
-console.log(nature);
 
 console.log(form);
 form.addEventListener('submit', (i)=>{
     i.preventDefault();
     let val=document.querySelector('#birthdate').value;
-    if(val<0 || val>33){
-        result.innerHTML="Invalid Input"
+    if(val<0 || val>32){  
+        location.reload();
+        
     }
 //Val is string.
  // console.log(typeof(val));
+ 
   let a=parseInt(val[0]);
-     if(a==0){
+  if(a==0){
     a=0;
   }
   let b=parseInt(val[1]);
@@ -99,30 +105,31 @@ form.addEventListener('submit', (i)=>{
     sum=a;
   }
 
-    if(val==28 || val==19){
+  if(val==28 || val==19){
     sum=1
  }
  if(val==29){
     sum=2
  }
   // all ok here (interger)
+  
   switch(sum){
-    
-    
+
+
     case 1:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
 
         moolank.innerHTML="1";
-        nature.innerHTML="Nature like Sun a giver or leader, People trust you, aggreesive, ego, can't dominate by other, risk taker, leadership, strong physics" ;
+        nature.innerHTML="Nature like Sun, People trust you, aggreesive, ego, can't dominate by other, risk taker, leadership, strong body" ;
         luckyColor.innerHTML="Yellow or (Color like sun)";
         luckyNumber.innerHTML="1,2,7";
-        tips.innerHTML="you can achive success if not change career,  love relation not so good (broken, by time) Career = army, police, politics, business";
+        tips.innerHTML="you can achive success if will not change career,  love relation not so good (broken, by time) Career = army, police, politics, business";
         break;
 
     case 2:
-       result.style.display="block";
+    result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
         moolank.innerHTML="2";
@@ -132,7 +139,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="meditation , don't reveal your emotion of other quickly. Career = doctor, nurse, nature lover, artist ";
         break;
 
-        case 3:
+     case 3:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -143,7 +150,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="Career = do your own work  Real Estate, Property Dealer, Construction, Music, Singing, Artistic, Composer, Civil Engineering, Architect, Interior Designing, CA, Banker";
         break;
 
-        case 4:
+     case 4:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -154,7 +161,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="Be spritual, meditation, learn to say NO, donate food to other, Career = Technical work, Doctor fields";
         break;
 
-        case 5:
+     case 5:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -165,7 +172,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="wear green emerald stone, Do yoga and exercise. Career = Business, import/Export in foreign";
         break;
 
-        case 6:
+     case 6:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -176,7 +183,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="Downfall starts if they drink alchol etc, don't share too many thing. Career = Designer, broker, luxary business, arists";
         break; 
 
-        case 7:
+     case 7:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -188,7 +195,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="Don't do money help, you get problems of heart and body, worship sun god, don't expert anything from other, gym, meditation,  Carrer = Researcher";
         break;
 
-        case 8:
+    case 8:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -199,7 +206,7 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="If they keep doing hardworking for long period of time then get success, do not apply short cut in life, and don't steal anything form other, Donate something. Career = Real state, law etc";
         break;
 
-        case 9:
+    case 9:
         result.style.display="block";
         hide1.style.display="none";
         hide2.style.display="none";
@@ -210,21 +217,19 @@ form.addEventListener('submit', (i)=>{
         tips.innerHTML="relationship problem so manage it, express feeling, meditation, Career = Real state, own business, Gym, politics etc ";
         break;
 
-        default:
+    default:
             result.innerHTML="Error, Refresh and enter number 1-31";
             location.reload();
+             
+
   } 
   
   reset.addEventListener('click',()=>{
-    // TO reload whole page.
-      location.reload();
-  })
-    
-
-    
+   
+    // To reload whole page.
+        location.reload();
+  })   
 
 })
-
-
 </script>
 </html>
