@@ -84,17 +84,27 @@ form.addEventListener('submit', (i)=>{
         result.innerHTML="Invalid Input"
     }
 //Val is string.
-  console.log(typeof(val));
+ // console.log(typeof(val));
   let a=parseInt(val[0]);
+     if(a==0){
+    a=0;
+  }
   let b=parseInt(val[1]);
   let sum=0;
   if(val>=10){ 
 // Now a,b sum is integer.
   sum = a+b;
   }
-  else{ 
+  if{ 
     sum=a;
   }
+
+    if(val==28 || val==19){
+    sum=1
+ }
+ if(val==29){
+    sum=2
+ }
   // all ok here (interger)
   switch(sum){
     
@@ -202,15 +212,12 @@ form.addEventListener('submit', (i)=>{
 
         default:
             result.innerHTML="Error, Refresh and enter number 1-31";
-
+            location.reload();
   } 
   
   reset.addEventListener('click',()=>{
-    result.style.display="none";
-        hide1.style.display="block";
-        hide2.style.display="block";
-
-        
+    // TO reload whole page.
+      location.reload();
   })
     
 
